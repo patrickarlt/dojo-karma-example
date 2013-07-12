@@ -1,0 +1,22 @@
+{
+  "name": "dojo-and-karma",
+  "description": "Testing Dojo With Karma",
+  "homepage": "https://github.com/patrickarlt/karma-dojo",
+  "keywords": [
+    "dojo",
+    "karma",
+    "jasmine",
+    "testing"
+  ],
+  "author": "Patrick Arlt <patrick.arlt@gmail.com>",
+  "contributors": [],
+  "dependencies": [],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:patrickarlt/karma-dojo.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-karma": "~0.4.5"
+  }
+}
