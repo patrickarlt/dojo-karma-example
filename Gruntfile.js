@@ -2,31 +2,16 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-    // setup the karma runner
     karma: {
-      // a in development set of tests to run when files change
-      dev: {
-        configFile: 'karma.conf.js',
-
-        // watch for changes in source files and rerun tests
-        autoWatch: true,
-
-        // output test coverage in the console
-        coverageReporter: {
-          type: "text",
-          dir : 'coverage/'
-        }
+      watch: {
+        configFile: 'karma.conf.js'
       },
-
-      // a less frequent test that build also outputs html coverage
-      build: {
+      coverage: {
         configFile: 'karma.conf.js',
-
-        // run once and quit
         singleRun: true,
-
-        // output html coverage files
+        preprocessors:{
+          'js/**/*.js': 'coverage'
+        },
         coverageReporter: {
           type : 'html',
           dir : 'coverage/'
@@ -36,5 +21,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-karma');
+
+  grunt.registerTask('default', ['karma:watch']);
 
 };
